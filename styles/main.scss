@@ -1,0 +1,420 @@
+@import './reset';
+@import './baselib';
+
+/* SCSS Vars */
+
+$breakpoint-xs: 420px;
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1024px;
+
+/* Global */
+
+:root {
+    /* Typography */
+
+    // font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Segoe UI', Verdana, sans-serif;
+    // font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    /* Theme */
+
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+
+    code, key, pre {background-color: var(--color-code-bg);}
+
+    .hr {color: var(--color-hr);}
+
+    font-size: 110%;
+
+    /* Vars */
+
+    --max-page-width: #{$breakpoint-md};
+    --font-size-h1: 1.6rem;
+    --font-size-h2: 1.4rem;
+    --font-size-h3: 1.2rem;
+
+    // Source: https://brandcolors.net.
+    --color-skype:    #00aff0;
+    --color-github:   #4183c4;
+    --color-youtube:  #ff0000;
+    --color-twitter:  #55acee;
+    --color-linkedin: #0976b4;
+    --color-facebook: #3b5998;
+    --color-feedly:   #2bb24c;
+    --color-rss:      #f26522;
+}
+
+body {
+    overflow-x: auto;
+    overflow-y: scroll;
+    @extend .center-by-margins;
+    @extend .padding-h-1;
+}
+
+code, key, pre {
+    @extend .font-monospace;
+}
+
+/* Themes */
+
+.theme-light {
+    --color-bg:      white;
+    --color-fg:      rgba(0, 0, 0, 0.87);
+    --color-pale:    hsl(0, 0%, 97%);
+    --color-faded:   hsl(0, 0%, 46%);
+    --color-smoke:   aliceblue;
+    --color-red:     hsl(3,   100%, 60%);
+    --color-blue:    hsl(207, 100%, 42%);
+    --color-link:    hsl(231, 60%, 30%);
+    --color-code-bg: hsl(60, 33%, 97%);
+    --color-hr:      hsl(0, 0%, 63%);
+}
+
+.theme-dark {
+    --color-bg:      hsl(200, 5%, 10%);
+    --color-fg:      white;
+    --color-pale:    hsl(0, 0%, 3%);
+    --color-faded:   hsl(0, 0%, 70%);
+    --color-smoke:   darkslategray;
+    --color-red:     hsl(0, 70%, 30%);
+    --color-blue:    hsl(207, 100%, 60%);
+    --color-link:    hsl(230, 70%, 80%);
+    --color-code-bg: hsl(70, 8%, 15%); // Same as chroma's Monokai background
+    --color-hr:      hsl(0, 0%, 63%);
+}
+
+.theme-red {
+    background-color: var(--color-red);
+    color: white;
+}
+
+.bg-pale  {background-color: var(--color-pale);}
+.bg-smoke {background-color: var(--color-smoke);}
+.bg-code  {background-color: var(--color-code-bg);}
+
+.busy-bg-pale:hover {background-color: var(--color-pale);}
+
+.fg-pale  {color: var(--color-pale);}
+.fg-faded {color: var(--color-faded);}
+.fg-blue  {color: var(--color-blue);}
+.fg-red   {color: var(--color-red);}
+.fg-link  {color: var(--color-link);}
+
+.fill-fg    {fill: var(--color-fg);}
+.fill-faded {fill: var(--color-faded);}
+
+.stroke-fg {stroke: var(--color-fg);}
+
+.fg-facebook {color: var(--color-facebook);}
+.fg-github   {color: var(--color-github);}
+.fg-linkedin {color: var(--color-linkedin);}
+.fg-skype    {color: var(--color-skype);}
+.fg-twitter  {color: var(--color-twitter);}
+.fg-feedly   {color: var(--color-feedly);}
+.fg-rss      {color: var(--color-rss);}
+.fg-feedly   {color: var(--color-feedly);}
+.fg-youtube  {color: var(--color-youtube);}
+
+.fill-facebook {fill: var(--color-facebook);}
+.fill-github   {fill: var(--color-github);}
+.fill-linkedin {fill: var(--color-linkedin);}
+.fill-skype    {fill: var(--color-skype);}
+.fill-twitter  {fill: var(--color-twitter);}
+.fill-feedly   {fill: var(--color-feedly);}
+.fill-rss      {fill: var(--color-rss);}
+.fill-feedly   {fill: var(--color-feedly);}
+.fill-youtube  {fill: var(--color-youtube);}
+
+/* Typography */
+
+.weight-bold    {@extend .weight-semibold;}
+.font-small     {font-size: 0.8rem;}
+.font-normal    {font-size: 1rem;}
+.font-large     {font-size: 1.4rem;}
+.font-giant     {font-size: 2rem;}
+.font-monospace {font-family: SF Mono, Menlo, Monaco, DejaVu Sans Mono, Consolas, monospace;}
+
+/* Layout */
+
+.row-start-start    {@include flex-layout(row, start, start);}
+.row-start-stretch  {@include flex-layout(row, start, stretch);}
+.row-center-center  {@include flex-layout(row, center, center);}
+.row-end-center     {@include flex-layout(row, end, center);}
+.row-between-center {@include flex-layout(row, between, center);}
+.col-start-start    {@include flex-layout(col, start, start);}
+.col-start-stretch  {@include flex-layout(col, start, stretch);}
+.col-start-end      {@include flex-layout(col, start, end);}
+
+// Note: the additional specificity allows this class to override the regular,
+// non-inline flex container classes.
+.flex-inline,
+:root.flex-inline,
+.flex-inline:not(:root) {
+    @include flex-inline;
+}
+
+.flex-1 {@include flex(1);}
+.flex-2 {@include flex(2);}
+.flex-3 {@include flex(3);}
+.flex-4 {@include flex(4);}
+.flex-5 {@include flex(5);}
+.flex-6 {@include flex(6);}
+.flex-7 {@include flex(7);}
+.flex-8 {@include flex(8);}
+.flex-9 {@include flex(9);}
+
+.flex-noshrink {@include flex-shrink(none);}
+
+.order-1 {@include flex-order(1);}
+.order-2 {@include flex-order(2);}
+.order-3 {@include flex-order(3);}
+.order-4 {@include flex-order(4);}
+.order-5 {@include flex-order(5);}
+.order-6 {@include flex-order(6);}
+.order-7 {@include flex-order(7);}
+.order-8 {@include flex-order(8);}
+.order-9 {@include flex-order(9);}
+
+.stretch-to-viewport {
+    min-height: 100vh;
+    @extend .col-start-stretch;
+}
+
+.limit-width {
+    width: 100%;
+    @extend .center-by-margins;
+    max-width: var(--max-page-width);
+    &:not(.--unpadded) {@extend .padding-h-1;}
+}
+
+/* Whitespace */
+
+.margin-t-1  {margin-top:    1rem;}
+.margin-t-2  {margin-top:    2rem;}
+.margin-t-4  {margin-top:    4rem;}
+.margin-b-1  {margin-bottom: 1rem;}
+.margin-b-2  {margin-bottom: 2rem;}
+.margin-b-4  {margin-bottom: 4rem;}
+.margin-r-1  {margin-right:  1rem;}
+.margin-v-1  {@include margin-v(1rem);}
+.margin-v-2  {@include margin-v(2rem);}
+
+.padding-0x5 {padding: 0.5rem;}
+.padding-1   {padding: 1rem;}
+.padding-h-1 {@include padding-h(1rem);}
+.padding-t-1 {padding-top: 1rem;}
+.padding-b-2 {padding-bottom: 2rem;}
+
+.gaps-v-0x25   {@include gaps-v(0.25rem);}
+.gaps-v-0x5    {@include gaps-v(0.5rem);}
+.gaps-v-1      {@include gaps-v(1rem);}
+.gaps-v-2      {@include gaps-v(2rem);}
+.gaps-v-4      {@include gaps-v(4rem);}
+.gaps-h-0x25   {@include gaps-h(0.25rem);}
+.gaps-h-0x5    {@include gaps-h(0.5rem);}
+.gaps-h-1      {@include gaps-h(1rem);}
+.gaps-h-2      {@include gaps-h(2rem);}
+.gaps-h-4      {@include gaps-h(4rem);}
+.gaps-v-letter {@include gaps-v(1ex);}
+.gaps-h-letter {@include gaps-v(calc(1em / 4));}
+
+.center-by-margins {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* details/summary */
+
+.details summary {
+    @extend .cursor-pointer;
+    @extend .padding-1;
+    background-color: var(--color-smoke);
+    .fancy-typography & ~ pre {margin-top: 0;}
+}
+
+/* Misc */
+
+.underdash {border-bottom: 1px dashed;}
+
+.busy-underdash {
+    &:hover {
+        box-shadow: 0px 1px 0px 0px var(--color-link);
+    }
+}
+
+.decorate-link[href] {
+    @extend .fg-link;
+    @extend .busy-underdash;
+}
+
+.hash-prefix {
+    opacity: 0.5;
+}
+
+.unstyled-list, .fancy-typography .unstyled-list {
+    padding: 0;
+    list-style-type: none;
+    list-style-position: unset;
+}
+
+.fancy-list                 {padding-left: 1.5em;}
+ul.fancy-list               {list-style-type: disc;}
+ul.fancy-list ul.fancy-list {list-style-type: circle;}
+
+.fancy-typography {
+    h1 {font-size: var(--font-size-h1);}
+    h2 {font-size: var(--font-size-h2);}
+    h3 {font-size: var(--font-size-h3);}
+
+    h1, h2, h3, h4, h5, h6 {
+        &:not(:first-child) {
+            margin-top: 2rem;
+        }
+        margin-bottom: 1rem;
+    }
+
+    > p, > pre, ul, ol {
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    ul, ol {@extend .fancy-list;}
+
+    ul > li, ol > li {
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    hr {
+        @include margin-v(2rem);
+        @extend .hr;
+    }
+
+    a {@extend .decorate-link;}
+
+    pre {@extend .padding-1;}
+
+    .heading-prefix {display: none;}
+
+    // @media (min-width: $breakpoint-lg + 1px) {
+    //     h1, h2, h3, h4, h5, h6 {position: relative;}
+
+    //     .heading-prefix {
+    //         position: absolute;
+    //         right:    calc(100% + 1ch);
+    //         display:  inline;
+    //         color:    var(--color-faded);
+    //     }
+
+    //     h1 > .heading-prefix::before {content: '# ';}
+    //     h2 > .heading-prefix::before {content: '## ';}
+    //     h3 > .heading-prefix::before {content: '### ';}
+    //     h4 > .heading-prefix::before {content: '#### ';}
+    //     h5 > .heading-prefix::before {content: '##### ';}
+    //     h6 > .heading-prefix::before {content: '###### ';}
+    // }
+}
+
+.blockquote {
+    padding: 1rem 1rem 1rem calc(1rem + 3px);
+    border-left: 3px solid var(--color-faded);
+    @extend .bg-code;
+}
+
+[disabled] {@extend .cursor-not-allowed;}
+
+.navlink {
+    @extend .font-small;
+    @extend .padding-0x5;
+    @extend .row-center-center;
+    @extend .fg-link;
+    text-transform: uppercase;
+    &.--busy {
+        @extend .busy-underdash;
+        @extend .busy-bg-pale;
+        &[aria-current=''], &[aria-current=true] {
+            box-shadow: inset 0 -3px 0 0;
+        }
+    }
+}
+
+// Motivation: pseudoelements are ignored when copy-pasting or printing.
+// This should be used for cosmetic text.
+[data-note]::before {
+    content: attr(data-note);
+}
+
+@media print {
+    .noprint:not(:root) {display: none;}
+}
+
+.svg-icon {
+    width: 1em;
+    height: 1em;
+    @extend .flex-noshrink;
+
+    // vertical-align: -0.1em;
+    // vertical-align: text-top;
+    // vertical-align: middle;
+}
+
+.sm-hide {
+    @media (max-width: $breakpoint-sm) {display: none;}
+}
+
+.heading-anchor {
+    /*
+    Note: we use opacity because "display: none" or "visibility: hidden" would
+    prevent the anchor from receiving focus on tab-navigation.
+    */
+    opacity: 0;
+    &:focus, &:hover, h1:hover &, h2:hover &, h3:hover &, h4:hover &, h5:hover &, h6:hover & {
+        opacity: 1;
+    }
+
+    /*
+    Note: putting the link symbol into a pseudoelement prevents it from getting
+    unnecessarily included into RSS article content, various reader modes,
+    printed content, etc.
+
+    Note: this doesn't cause screen readers to ignore the link. To omit it from
+    screen reader navigation and voiceover, use [aria-hidden="true"]. Note that
+    [aria-hidden=""] does not work.
+    */
+    &::after {
+        content: '🔗';
+        font-size: 1rem;
+    }
+
+}
+
+.skip-to-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend .bg-smoke;
+
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+
+    &:focus {
+        @extend .padding-1;
+        width: initial;
+        height: initial;
+        opacity: initial;
+        overflow: initial;
+    }
+}

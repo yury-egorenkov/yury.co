@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xml:base="https://yury.co" version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+	<channel>
+		<title>Software, Tech, Philosophy, Games | RSS | yury</title>
+		<link>https://yury.co/posts</link>
+		<description>Random thoughts about technology</description>
+		<managingEditor>yury.egorenkov@gmail.com (Yury Egorenkov)</managingEditor>
+		<pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+		<lastBuildDate>Wed, 27 Mar 2019 15:23:46 +0100</lastBuildDate>
+	</channel>
+</rss>
