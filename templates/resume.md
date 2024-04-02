@@ -71,20 +71,9 @@ Machine Learning / AI
 
 ### Purelab.io — ShanzhaiCity <span class="fg-faded font-normal">(2017—2018, Go, JS, Clojure).</span>
 
-Various webapps and websites for [ShanzhaiCity](https://shanzhaicity.com), a US-Chinese startup aiming at making charity effective.
-
 ### Purelab.io — [Render.js](https://renderjs.io) <span class="fg-faded font-normal">(JS, Node)</span>
 
-  * Service for prerendering single-page JavaScript applications into HTML
-  * Order of magnitude faster than alternatives
-  * Period: 2016—2017, part of team at Purelab.io
-
 ### FrontEnd Team Lead — [ToBox](http://tobox.purelab.io) <span class="fg-faded font-normal">(2015—2016, JS, React)</span>
-
-Stylish, visual platform for creating online shops. (Part of web frontend team.)
-
-## Open Source
-
 
 # Job Background
 

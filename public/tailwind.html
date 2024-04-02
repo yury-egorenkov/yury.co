@@ -1,0 +1,175 @@
+
+
+<!doctype html>
+<html class="theme-light">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2, initial-scale=1, user-scalable=yes" />
+    <link rel="icon" href="data:;base64,=" />
+    <link rel="stylesheet" type="text/css" href="/styles/main.css?2038289676" />
+
+    <title>Tailwind</title>
+
+    <link rel="alternate" type="application/atom+xml" title="Yury's Posts (Atom)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Yury's Posts (RSS)" href="/feed_rss.xml" />
+
+    <meta name="author" content="Yury Egorenkov" />
+    <meta property="og:title" content="Tailwind" />
+    <meta name="description" content="Yury Egorenkov&#39;s Application" />
+    
+    
+
+    
+    <script>
+        {
+            let ws
+            function reinit() {
+                const url    = 'ws://' + window.location.hostname + ':52694/ws'
+                const ws     = new WebSocket(url)
+                ws.onmessage = reload
+                ws.onclose   = reinitAfterDelay
+            }
+            function reload()           {window.location.reload()}
+            function reinitAfterDelay() {setTimeout(reinit, 1000)}
+            reinit()
+        }
+    </script>
+    
+</head>
+
+<body class="col-start-stretch relative" style="min-height: 100vh">
+    
+    <a href="#main-content" class="skip-to-content" onclick="event.preventDefault(); if (document.getElementById('main-content')) {document.getElementById('main-content').scrollIntoView()}">Skip to content</a>
+
+<div class="limit-width row-start-stretch margin-v-1 gaps-h-1">
+    <nav class="row-start-stretch">
+        <a href="/"       class="navlink --busy">home</a>
+
+    </nav>
+
+    <span class="flex-1"></span>
+</div>
+
+<div class="col-start-stretch flex-1">
+
+<article role="main article" id="main-content" class="fancy-typography">
+<p><div class="limit-width fancy-typography"></p>
+<h1 id="tailwind-application-design-engineer"><span class="heading-prefix" aria-hidden="true"></span>Tailwind Application — Design Engineer<span style="margin-left: 0.5rem;"><a href="#tailwind-application-design-engineer" class="heading-anchor" aria-hidden="true"></a></span></h1>
+<p>I&rsquo;m Yury Egorenkov <a href="https://yego.me" target="_blank" rel="noopener noreferrer">yego.me<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; width: 1.5ex; height: 1.5ex; margin-left: 0.3ch;" aria-hidden="true">
+	<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+	<polyline points="15 3 21 3 21 9" />
+	<line x1="10" y1="14" x2="21" y2="3" />
+</svg></a>, a full-stack developer, entrepreneur, head of <a href="https://purelab.io" target="_blank" rel="noopener noreferrer">purelab.io<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; width: 1.5ex; height: 1.5ex; margin-left: 0.3ch;" aria-hidden="true">
+	<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+	<polyline points="15 3 21 3 21 9" />
+	<line x1="10" y1="14" x2="21" y2="3" />
+</svg></a> and <a href="https://aliens.dev" target="_blank" rel="noopener noreferrer">aliens.dev<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; width: 1.5ex; height: 1.5ex; margin-left: 0.3ch;" aria-hidden="true">
+	<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+	<polyline points="15 3 21 3 21 9" />
+	<line x1="10" y1="14" x2="21" y2="3" />
+</svg></a> team.</p>
+
+<p>We work together with my partner Nelo Mitranim <a href="https://mitranim.com" target="_blank" rel="noopener noreferrer">mitranim.com<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; width: 1.5ex; height: 1.5ex; margin-left: 0.3ch;" aria-hidden="true">
+	<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+	<polyline points="15 3 21 3 21 9" />
+	<line x1="10" y1="14" x2="21" y2="3" />
+</svg></a>.</p>
+
+<p>Code principles we&rsquo;re follow: <a href="https://github.com/purelabio/guideline/blob/main/general.md" target="_blank" rel="noopener noreferrer">Guidelines<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; width: 1.5ex; height: 1.5ex; margin-left: 0.3ch;" aria-hidden="true">
+	<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+	<polyline points="15 3 21 3 21 9" />
+	<line x1="10" y1="14" x2="21" y2="3" />
+</svg></a></p>
+<h2 id="our-current-project"><span class="heading-prefix" aria-hidden="true"></span>Our current project<span style="margin-left: 0.5rem;"><a href="#our-current-project" class="heading-anchor" aria-hidden="true"></a></span></h2>
+<p>We built from scratch is <a href="https://corespirit.com" target="_blank" rel="noopener noreferrer">Corespirit<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; width: 1.5ex; height: 1.5ex; margin-left: 0.3ch;" aria-hidden="true">
+	<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+	<polyline points="15 3 21 3 21 9" />
+	<line x1="10" y1="14" x2="21" y2="3" />
+</svg></a></p>
+
+<p>Fully functional booking system and social network for online sessions, events, twitter inspired social network, articles, plenty of features.</p>
+
+<p>In this project we&rsquo;re hired small team contractor. We did technical part only. Content and marketing is not our responsibility zone.</p>
+
+<p>Core tech we&rsquo;re used: HTML/SASS/Javascript (frontend), Golang (backend), Postgresql (database). We have a really strong level in such technologies.</p>
+
+<p>We also have Kubernetes, fully-automated CI/CD. Strict tests: we don&rsquo;t want to write or read any code without auto-tests, we write them a lot.</p>
+
+<p>At first we used ReactJS for a several years. Now we&rsquo;re switch to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements" target="_blank" rel="noopener noreferrer">Custom Elements<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; width: 1.5ex; height: 1.5ex; margin-left: 0.3ch;" aria-hidden="true">
+	<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+	<polyline points="15 3 21 3 21 9" />
+	<line x1="10" y1="14" x2="21" y2="3" />
+</svg></a> because it&rsquo;s the future of SSR/SPA.</p>
+
+<p>We&rsquo;re</p>
+
+<ul>
+<li>weak at
+
+<ul>
+<li>pick colors</li>
+<li>painting</li>
+<li>art-design</li>
+</ul></li>
+<li>strong at
+
+<ul>
+<li>coding</li>
+<li>discovering great abstractions to easy express complex things</li>
+<li>making something doesn&rsquo;t exist before and nowhere to pick</li>
+</ul></li>
+</ul>
+
+<p>Our CSS is built from scratch and over the years, we developed ideas convergent with yours. At the time we were start the project we didn&rsquo;t know about existence of Tailwind. Also we were tired of Bootstrap-ish libraries they all easy to start using and really hard to opt-out and customize.</p>
+
+<p>We believe in a pyramid of abstractions: lower level bricks forming higher level bricks. We think Tailwind needs one higher level layer and we&rsquo;re ready to share our ideas.</p>
+
+<p>Speaking of CSS</p>
+
+<ul>
+<li>Bottom: level is CSS</li>
+<li>Medium: Atomic and Tailwind abstractions</li>
+<li>Top and missing one: <strong>How it looks — Not what it for</strong></li>
+</ul>
+
+<p>We&rsquo;re pedantic about consistency and even have shirts with &ldquo;consistency&rdquo; written on them.</p>
+
+<p>We really like your designs and want to build and improve them together!</p>
+
+<p>Even if you don&rsquo;t hire us it would be very great to have conversation so we can share our ideas and maybe can push web-dev community to good (less code, easy dev, more fun). Or if you&rsquo;d like we can do some projects for you not as part of your team as independent contractors.</p>
+
+<p>Anyway it is a pleasure to be in touch with you, can&rsquo;t wait for response.</p>
+
+<p>Best</p>
+
+<p></div></p>
+
+</article>
+</div>
+<footer style="margin-top: auto">
+    <div class="limit-width row-between-center margin-t-2 font-small">
+        <span class="flex-1 row-start-start gaps-h-0x5">
+            <span class="text-left">2014 — 2024</span>
+        </span>
+
+        <span class="flex-1 text-center">
+            <a href="/#contacts" class="decorate-link">write me</a>
+        </span>
+
+        <span class="flex-1 row-end-center gaps-h-0x5">
+            <a href="#" class="fill-faded padding-1 busy-bg-pale" onclick="event.preventDefault(); window.scrollTo(0, 0)">
+                <svg class="svg-icon fill-fg" viewBox="0 0 448 512" width="1em" height="1em"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg>
+            </a>
+        </span>
+
+    </div>
+    <span class="fg-blue row-center-center padding-0x5 sm-hide font-small margin-b-2">
+        Updated: Apr 02, 2024
+    </span>
+</footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,5 @@
+{{template "site-top.html" .}}
+<article role="main article" id="main-content" class="fancy-typography">
+{{includeWith "tailwind.md" . | toMarkdown}}
+</article>
+{{template "site-bottom.html" .}}

@@ -192,7 +192,7 @@ img {
   height: 100vh; }
 
 /* flex */
-.row-start-start, .row-start-stretch, .row-center-center, .navlink, .row-end-center, .row-between-center, .col-start-start, .col-start-stretch, .stretch-to-viewport, .col-start-end {
+.col-start-end, .col-start-stretch, .stretch-to-viewport, .col-start-start, .row-between-center, .row-end-center, .row-center-center, .navlink, .row-start-stretch, .row-start-start {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -204,19 +204,19 @@ img {
   display: -ms-inline-flexbox;
   display: inline-flex; }
 
-.row-start-start, .row-start-stretch, .row-center-center, .navlink, .row-end-center, .row-between-center {
+.row-between-center, .row-end-center, .row-center-center, .navlink, .row-start-stretch, .row-start-start {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row; }
 
-.col-start-start, .col-start-stretch, .stretch-to-viewport, .col-start-end {
+.col-start-end, .col-start-stretch, .stretch-to-viewport, .col-start-start {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
 
-.row-start-start, .row-start-stretch, .col-start-start, .col-start-stretch, .stretch-to-viewport, .col-start-end {
+.col-start-end, .col-start-stretch, .stretch-to-viewport, .col-start-start, .row-start-stretch, .row-start-start {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start; }
@@ -236,12 +236,12 @@ img {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
-.row-start-start, .col-start-start {
+.col-start-start, .row-start-start {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start; }
 
-.row-center-center, .navlink, .row-end-center, .row-between-center {
+.row-between-center, .row-end-center, .row-center-center, .navlink {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
@@ -251,7 +251,7 @@ img {
   -ms-flex-align: end;
   align-items: flex-end; }
 
-.row-start-stretch, .col-start-stretch, .stretch-to-viewport {
+.col-start-stretch, .stretch-to-viewport, .row-start-stretch {
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch; }
@@ -466,7 +466,7 @@ img {
 .circle {
   border-radius: 50%; }
 
-.bg-center, .bg-cover, .bg-contain {
+.bg-center, .bg-contain, .bg-cover {
   background-position: center center;
   background-repeat: no-repeat; }
 
@@ -488,7 +488,7 @@ img {
   color: var(--color-fg);
   font-size: 110%;
   /* Vars */
-  --max-page-width: 960px;
+  --max-page-width: 600px;
   --font-size-h1: 1.6rem;
   --font-size-h2: 1.4rem;
   --font-size-h3: 1.2rem;
@@ -562,7 +562,7 @@ body {
 .fg-red {
   color: var(--color-red); }
 
-.fg-link, .decorate-link[href], .fancy-typography a[href], .navlink {
+.fg-link, .navlink, .decorate-link[href], .fancy-typography a[href] {
   color: var(--color-link); }
 
 .fill-fg {
@@ -779,10 +779,10 @@ body {
 .padding-0x5, .navlink {
   padding: 0.5rem; }
 
-.padding-1, .details summary, .fancy-typography pre, .skip-to-content:focus {
+.padding-1, .skip-to-content:focus, .fancy-typography pre, .details summary {
   padding: 1rem; }
 
-.padding-h-1, body, .limit-width:not(.--unpadded) {
+.padding-h-1, .limit-width:not(.--unpadded) {
   padding-left: 1rem;
   padding-right: 1rem; }
 
@@ -842,7 +842,7 @@ body {
 .underdash {
   border-bottom: 1px dashed; }
 
-.busy-underdash:hover, .decorate-link:hover[href], .fancy-typography a:hover[href], .navlink.--busy:hover {
+.busy-underdash:hover, .navlink.--busy:hover, .decorate-link[href]:hover, .fancy-typography a[href]:hover {
   box-shadow: 0px 1px 0px 0px var(--color-link); }
 
 .hash-prefix {
@@ -856,10 +856,10 @@ body {
 .fancy-list, .fancy-typography ul, .fancy-typography ol {
   padding-left: 1.5em; }
 
-ul.fancy-list, .fancy-typography ul {
+ul.fancy-list {
   list-style-type: disc; }
 
-ul.fancy-list ul.fancy-list, .fancy-typography ul ul.fancy-list, ul.fancy-list .fancy-typography ul, .fancy-typography ul.fancy-list ul, .fancy-typography ul ul {
+ul.fancy-list ul.fancy-list {
   list-style-type: circle; }
 
 .fancy-typography h1 {
@@ -872,17 +872,14 @@ ul.fancy-list ul.fancy-list, .fancy-typography ul ul.fancy-list, ul.fancy-list .
   font-size: var(--font-size-h3); }
 
 .fancy-typography h1, .fancy-typography h2, .fancy-typography h3, .fancy-typography h4, .fancy-typography h5, .fancy-typography h6 {
-  margin-bottom: 1rem; }
+  margin-bottom: 0.5rem; }
   .fancy-typography h1:not(:first-child), .fancy-typography h2:not(:first-child), .fancy-typography h3:not(:first-child), .fancy-typography h4:not(:first-child), .fancy-typography h5:not(:first-child), .fancy-typography h6:not(:first-child) {
-    margin-top: 2rem; }
+    margin-top: 1rem; }
 
 .fancy-typography > p:not(:first-child), .fancy-typography > pre:not(:first-child), .fancy-typography ul:not(:first-child), .fancy-typography ol:not(:first-child) {
-  margin-top: 1rem; }
+  margin-top: 0.5rem; }
 
 .fancy-typography > p:not(:last-child), .fancy-typography > pre:not(:last-child), .fancy-typography ul:not(:last-child), .fancy-typography ol:not(:last-child) {
-  margin-bottom: 1rem; }
-
-.fancy-typography ul > li:not(:last-child), .fancy-typography ol > li:not(:last-child) {
   margin-bottom: 0.5rem; }
 
 .fancy-typography hr {

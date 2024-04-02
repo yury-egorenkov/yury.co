@@ -55,6 +55,12 @@ var SITE_PAGES = []Page{
 		Description: `Yury Egorenkov's Resume`,
 		ForceLight:  true,
 	},
+	{
+		Path:        `tailwind.html`,
+		Title:       `Tailwind`,
+		Description: `Yury Egorenkov's Application`,
+		ForceLight:  true,
+	},
 }
 
 var SITE_POSTS = []Post{}

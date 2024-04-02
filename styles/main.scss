@@ -33,7 +33,7 @@ $breakpoint-lg: 1024px;
 
     /* Vars */
 
-    --max-page-width: #{$breakpoint-md};
+    --max-page-width: #{$breakpoint-sm};
     --font-size-h1: 1.6rem;
     --font-size-h2: 1.4rem;
     --font-size-h3: 1.2rem;
@@ -53,7 +53,6 @@ body {
     overflow-x: auto;
     overflow-y: scroll;
     @extend .center-by-margins;
-    @extend .padding-h-1;
 }
 
 code, key, pre {
@@ -273,27 +272,21 @@ ul.fancy-list ul.fancy-list {list-style-type: circle;}
 
     h1, h2, h3, h4, h5, h6 {
         &:not(:first-child) {
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     > p, > pre, ul, ol {
         &:not(:first-child) {
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
-        &:not(:last-child) {
-            margin-bottom: 1rem;
-        }
-    }
-
-    ul, ol {@extend .fancy-list;}
-
-    ul > li, ol > li {
         &:not(:last-child) {
             margin-bottom: 0.5rem;
         }
     }
+
+    ul, ol {@extend .fancy-list;}
 
     hr {
         @include margin-v(2rem);
