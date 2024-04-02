@@ -41,24 +41,24 @@ var FLAGS = struct {
 
 var SITE_PAGES = []Page{
 	{
-		Path:        `index.html`,
-		Title:       `about:yury`,
-		Description: `Overview about me`,
-	},
-	{
 		Path:  "404.html",
 		Title: "Page Not Found",
 	},
 	{
+		Path:        `index.html`,
+		Title:       `Yury Egorenkov | about`,
+		Description: `Overview about me`,
+	},
+	{
 		Path:        `resume.html`,
-		Title:       `Resume`,
-		Description: `Yury Egorenkov's Resume`,
+		Title:       `Yury Egorenkov | resume`,
+		Description: `Yury's Egorenkov Resume`,
 		ForceLight:  true,
 	},
 	{
 		Path:        `tailwind.html`,
-		Title:       `Tailwind`,
-		Description: `Yury Egorenkov's Application`,
+		Title:       `Yury Egorenkov | Tailwind application`,
+		Description: `Yury's Egorenkov Application`,
 		ForceLight:  true,
 	},
 }

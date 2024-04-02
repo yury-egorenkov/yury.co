@@ -141,6 +141,7 @@ code, key, pre {
 /* Layout */
 
 .row-start-start    {@include flex-layout(row, start, start);}
+.row-start-center   {@include flex-layout(row, start, center);}
 .row-start-stretch  {@include flex-layout(row, start, stretch);}
 .row-center-center  {@include flex-layout(row, center, center);}
 .row-end-center     {@include flex-layout(row, end, center);}
@@ -248,7 +249,7 @@ code, key, pre {
 
 .decorate-link[href] {
     @extend .fg-link;
-    @extend .busy-underdash;
+    // @extend .busy-underdash;
 }
 
 .hash-prefix {
@@ -352,8 +353,8 @@ ul.fancy-list ul.fancy-list {list-style-type: circle;}
 }
 
 .svg-icon {
-    width: 1em;
-    height: 1em;
+    width: 2em;
+    height: 2em;
     @extend .flex-noshrink;
 
     // vertical-align: -0.1em;
